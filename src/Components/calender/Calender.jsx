@@ -32,24 +32,24 @@ const Calender = () => {
       return dateA === dateB;
     });
 
-    return background ? "#14b8a6" : "";
+    return background ? "#cefdf8" : "";
   };
 
   return (
     <div className="w-full  lg:w-[35%] h-[550px] lg:h-[600px] rounded-xl shadow-2xl  bg-white p-2  md:p-6 flex flex-col">
       <div className="w-full flex justify-between items-center mb-[24px] md:pl-[16px]">
-        <h2 className="text-2xl font-bold text-[#14b8a6]">{monthOfYear[currentMonth]}</h2>
-        <h2 className="text-2xl font-bold text-[#14b8a6]">, {currentYear}</h2>
+        <h2 className="text-xl md:text-2xl font-bold">{monthOfYear[currentMonth]}</h2>
+        <h2 className="text-xl md:text-2xl font-bold">, {currentYear}</h2>
 
-        <div className="flex gap-[16px] ml-auto">
+        <div className="flex items-center gap-[16px] ml-auto">
           <span
-            className="w-[40px] h-[40px] flex items-center justify-center bg-[#14b8a6] rounded-full text-2xl text-white cursor-pointer"
+            className="w-[25px] md:w-[40px]  h-[25px] md:h-[40px]  flex items-center justify-center bg-[#14b8a6] rounded-full text-xl md:text-2xl text-white cursor-pointer"
             onClick={prevMonth}>
             <FaChevronLeft />
           </span>
 
           <span
-            className="w-[40px] h-[40px] flex items-center justify-center bg-[#14b8a6] rounded-full text-2xl text-white cursor-pointer"
+            className="w-[25px] md:w-[40px]  h-[25px] md:h-[40px]  flex items-center justify-center bg-[#14b8a6] rounded-full text-xl md:text-2xl text-white cursor-pointer "
             onClick={nextMonth}>
             <FaChevronRight />
           </span>
@@ -60,7 +60,7 @@ const Calender = () => {
         {daysOfWeeks.map((day) => (
           <span
             key={day}
-            className="w-[calc(100%/7)] md:text-xl font-bold uppercase text-[#14b8a6] tracking-[1.6px] flex justify-center">
+            className="w-[calc(100%/7)] text-sm md:text-xl font-bold uppercase  tracking-[1.6px] flex justify-center">
             {day}
           </span>
         ))}
@@ -74,7 +74,7 @@ const Calender = () => {
         {[...Array(daysInMonth).keys()].map((day) => (
           <div
             key={day + 1}
-            className={`w-[calc(100%/7)]   text-[#134e48] p-3 flex justify-center items-center cursor-pointer`}
+            className={`w-[calc(100%/7)] text-sm  text-[#134e48] p-3 flex justify-center items-center cursor-pointer rounded-md`}
             style={{
               background: `${handleBackGroundCalander(currentYear, currentMonth + 1, day + 1)}`,
             }}
@@ -82,11 +82,11 @@ const Calender = () => {
               dispatch(setEventPerDate({ year: currentYear, month: currentMonth, day: day + 1 }))
             }>
             <span
-              className={`py-2.5 px-5 ${
+              className={`py-2.5 px-5 hfull ${
                 day + 1 === CurrentDate.getDate() &&
                 currentMonth === CurrentDate.getMonth() &&
                 currentYear === CurrentDate.getFullYear()
-                  ? "text-white   bg-[#134e48] rounded-full  scale-70"
+                  ? "text-white font-bold text-2xl   bg-[#134e48] rounded-full  scale-70"
                   : ""
               }`}>
               {day + 1}

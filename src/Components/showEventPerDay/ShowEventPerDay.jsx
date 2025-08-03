@@ -13,15 +13,15 @@ const ShowEventPerDay = () => {
   });
 
   return (
-    <div className="w-full lg:w-[65%]   lg:h-[600px]    rounded-xl shadow-2xl  bg-white  p-6 flex flex-col">
-      <div className="text-2xl font-bold text-[#14b8a6]">
+    <div className="w-full lg:w-[65%]   h-fit  rounded-xl shadow-2xl  bg-white  p-6 flex flex-col">
+      <div className="text-xl md:text-2xl font-bold ">
         <span>Event for </span>
         <span className="ml-2">{monthOfYear[today.month]}</span>
         <span className="ml-2">
           {today.day}, {today.year}
         </span>
       </div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2  mt-2.5 gap-3.5  overflow-y-auto md:p-2.5">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 mt-4 md:mt-2.5 gap-3.5  overflow-y-auto md:p-2.5">
         {getFilterPerDate.map((el, index) => (
           <div key={index} className="items-stretch">
             <SingleEventBox

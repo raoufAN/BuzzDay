@@ -16,24 +16,28 @@ const SingleEventBox = ({ name, image, startTime, endTime, location, description
 
   return (
     <div
-      className="bg-white relative rounded-lg shadow-sm overflow-hidden animate-fade-in border-b-3 "
+      className="bg-white relative rounded-lg  shadow-md overflow-hidden animate-fade-in border-b-3 hover:translate-y-[-4px] transition-all  duration-300 hover:shadow-card hover:scale-[1.02] group"
       style={{
         borderColor: getEventColor(type),
       }}>
       <div
-        className="h-40  relative"
+        className="h-40  relative overflow-hidden"
         style={{ background: `url(${noImage})`, backgroundPosition: "center" }}>
-        <img src={image || noImage} alt={name} className="h-full w-full object-cover" />
+        <img
+          src={image || noImage}
+          alt={name}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="p-4 flex flex-col">
         <h3 className="text-lg font-semibold text-gray-800 mb-1 line-clamp-1">{name}</h3>
         <div className="flex items-center text-gray-500 text-sm mb-3">
-          <IoTimeOutline className="mr-2" />
+          <IoTimeOutline className="mr-2" style={{ color: getEventColor(type) }} size={20} />
           <span className="mr-2.5">{startTime}</span>
           To <span className="ml-2.5">{endTime || "There’s no End Time"}</span>
         </div>
         <div className="flex items-center text-gray-500 text-sm mb-3">
-          <IoLocationSharp className="mr-2" />
+          <IoLocationSharp className="mr-2" style={{ color: getEventColor(type) }} size={20} />
           <span>{location || "There’s no Loaction"}</span>
         </div>
         <div className="text-gray-600 text-sm mb-4 line-clamp-1">
@@ -46,7 +50,8 @@ const SingleEventBox = ({ name, image, startTime, endTime, location, description
             {type || "There’s no Type"}
           </span>
           <FaArrowRight
-            className="text-[#14b8a6] cursor-pointer"
+            className="cursor-pointer"
+            style={{ color: getEventColor(type) }}
             size={22}
             onClick={() => {
               dispatch(setShowDetailsEvent(true));

@@ -18,7 +18,7 @@ const Header = () => {
           <button
             type="button"
             onClick={() => dispatch(setShowInputFields(true))}
-            className="flex items-center px-5 py-2  font-bold text-[#14b8a6] bg-[white] rounded-2xl cursor-pointer hover:bg-[#f0fdfc] ">
+            className="flex items-center px-5 py-2  font-bold text-[#14b8a6] bg-[white] rounded-2xl cursor-pointer hover:bg-white/30 hover:text-white border border-white/30 transition-all duration-300 hover:scale-105 hover:border-white">
             <MdOutlineAdd size={22} className="mr-1" />
             Create Event
           </button>

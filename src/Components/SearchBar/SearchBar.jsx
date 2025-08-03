@@ -6,9 +6,9 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search events...."
-        className="bg-white w-full px-4 py-1 md:px-5 md:py-2 rounded-md placeholder:text-[#14b8a6] outline-0"
+        className="flex w-full rounded-md border-input px-3 py-2 text-base ring-offset-background  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 bg-white/95 border-0 focus:ring-2 focus:ring-white/50 placeholder:text-muted-foreground"
       />
-      <span className="h-full absolute right-[10px] top-0 flex justify-center items-center">
+      <span className="h-full absolute left-[10px] top-0 flex justify-center items-center">
         <FaSearch className="text-[#14b8a6] " />
       </span>
     </div>

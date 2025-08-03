@@ -38,6 +38,7 @@ const InputFields = () => {
 
   const handleInputsFields = (e) => {
     const { name, value } = e.target;
+
     setDatainputs((prev) => ({
       ...prev,
       [name]: value,
@@ -74,6 +75,7 @@ const InputFields = () => {
       setValidationInputsErrors((prev) => ({ ...prev, startTime: true }));
     } else {
       if (editOrAdd === "add") {
+        console.log(dataInputs.name);
         setValidationInputsErrors({ title: false, date: false, startTime: false });
         dispatch(setShowInputFields(false));
         dispatch(add(dataInputs));

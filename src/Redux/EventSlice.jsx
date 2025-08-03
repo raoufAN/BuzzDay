@@ -66,7 +66,7 @@ export const eventsSlice = createSlice({
     // updateAction
     add: (state, action) => {
       state.events.push({
-        name: action.payload.title,
+        name: action.payload.name,
         description: action.payload.description,
         date: action.payload.date,
         startTime: action.payload.startTime,
@@ -77,7 +77,7 @@ export const eventsSlice = createSlice({
         IsEdting: false,
       });
       state.eventsFiltering.push({
-        name: action.payload.title,
+        name: action.payload.name,
         description: action.payload.description,
         date: action.payload.date,
         startTime: action.payload.startTime,
