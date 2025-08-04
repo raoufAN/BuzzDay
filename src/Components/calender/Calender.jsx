@@ -74,7 +74,7 @@ const Calender = () => {
         {[...Array(daysInMonth).keys()].map((day) => (
           <div
             key={day + 1}
-            className={`w-[calc(100%/7)] text-sm  text-[#134e48] p-3 flex justify-center items-center cursor-pointer rounded-md`}
+            className={`w-[calc(100%/7)] text-sm m-0.5  text-[#134e48] p-3 flex justify-center items-center cursor-pointer rounded-md`}
             style={{
               background: `${handleBackGroundCalander(currentYear, currentMonth + 1, day + 1)}`,
             }}
