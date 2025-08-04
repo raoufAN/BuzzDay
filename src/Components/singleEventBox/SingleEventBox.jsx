@@ -10,7 +10,7 @@ const SingleEventBox = ({ name, image, startTime, endTime, location, description
   const dispatch = useDispatch();
 
   const getEventColor = (type) => {
-    const match = eventTypeColors.find((el) => el.type === type);
+    const match = eventTypeColors.find((el) => el.type.toLowerCase() === type.toLowerCase());
     return match?.bg || "#d1d5db";
   };
 
